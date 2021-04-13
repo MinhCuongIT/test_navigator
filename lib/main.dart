@@ -11,31 +11,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo App 1',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Material App 1'),
+      home: MyHomePageApp1(),
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+class MyHomePageApp1 extends StatefulWidget {
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageApp1State createState() => _MyHomePageApp1State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageApp1State extends State<MyHomePageApp1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('App Main 1'),
       ),
       body: Center(
         child: Column(
@@ -47,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
               child: Text('Go to App 2'),
               onPressed: () {
-                Navigator.of(context, rootNavigator: true).push(
+                Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => MyApp2(),
                   ),
